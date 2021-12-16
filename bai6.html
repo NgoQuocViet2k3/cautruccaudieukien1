@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let turnover = parseFloat(prompt('Nhập doanh số (triệu đồng):'));
+let commissionRate ;
+if (turnover>500){
+    commissionRate =0.08;
+}else if (turnover>400){
+    commissionRate = 0.06;
+}else if (turnover>300){
+    commissionRate = 0.04;
+}else if (turnover>200){
+    commissionRate = 0.02
+}else {commission= 0.01;
+}
+let commission = turnover * commissionRate;
+let message = 'Mức hoa hồng là ' + (commissionRate*100) + '% của'+ turnover + ' triệu đồng. Bằng '
+    + commission + ' triệu đồng';
+alert(message);
+
+</script>
+
+</body>
+</html>

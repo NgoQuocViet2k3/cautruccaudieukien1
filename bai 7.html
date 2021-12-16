@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const SUBSCRIPTION_FEE = 25000;
+
+    let callingTime = parseFloat(prompt('Nhập số phút gọi:'));
+    let callingFee, totalFee;
+    let first10MinuteFee =  10 * 600;
+    let first60MinuteFee = first10MinuteFee + 30 * 400;
+
+    if (callingTime > 60){
+        callingFee = first60MinuteFee + (callingTime - 60) *200;
+    } else if (callingTime > 10){
+        callingFee = first10MinuteFee + (callingTime - 10) * 400;
+    } else {
+        callingFee = callingTime * 600;
+    }
+
+    totalFee = callingFee + SUBSCRIPTION_FEE;
+    let message = 'Tổng số tiền cước: ' + totalFee + ' VND.'    ;
+    alert(message);
+
+</script>
+</body>
+</html>

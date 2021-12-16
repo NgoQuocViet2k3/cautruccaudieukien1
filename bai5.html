@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Nhập điểm</h2>
+Bài kiểm tra 1<input type="number" id="test1" value="10"><br/>
+Bài kiểm tra 2<input type="number" id="test2" value="10"><br/>
+Bài kiểm tra 3<input type="number" id="test3" value="10"><br/>
+Bài kiểm tra 4<input type="number" id="test4" value="10"><br/>
+Bài kiểm tra 5<input type="number" id="test5" value="10"><br/>
+Bài thi giữa kì<input type="number" id="middleTest" value="10"><br/>
+Bài thi cuối kì<input type="number" id="finalTest" value="10"><br/>
+<input type="button" value="Xếp loại" onclick="run()">
+<p id="averageScore"></p>
+<p id="degree"></p>
+<script>
+    function run(){
+        let test1Score= parseFloat(document.getElementById('test1').value);
+        let test2Score= parseFloat(document.getElementById('test2').value);
+        let test3Score= parseFloat(document.getElementById('test3').value);
+        let test4Score= parseFloat(document.getElementById('test4').value);
+        let test5Score= parseFloat(document.getElementById('test5').value);
+        let middleTestScore=parseFloat(document.getElementById('middleTest').value);
+        let finalTestScore = parseFloat(document.getElementById('finalTest').value);
+        let averageScore=test1Score*0.1+test2Score*0.1+test3Score*0.1+test4Score*0.1+test5Score*0.1+middleTestScore*0.2
+            +finalTestScore*0.3;
+        let degree;
+        console.log(test1Score);
+        console.log(test2Score);
+        console.log(test3Score);
+        console.log(test4Score);
+        console.log(test5Score);
+        console.log(middleTestScore);
+        console.log(finalTestScore);
+        console.log(averageScore);
+        if (averageScore >= 9) {
+            degree = 'Xuất sắc';
+        }else if (averageScore>= 8) {
+            degree = 'Giỏi';
+        }else if (averageScore>=6.5) {
+            degree = 'Khá';
+        }else if (averageScore>=5) {
+            degree = 'Trung bình';
+        }else {
+            degree = 'Yếu';
+        }
+        document.getElementById('averageScore').innerText= 'Điểm trung bình: ' + averageScore;
+        document.getElementById('degree').innerText='Xếp loại: ' + degree;
+    }
+</script>
+</body>
+</html>
